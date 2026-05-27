@@ -4,7 +4,6 @@ import dev.superchirok1.wgtranslator.WorldGuardTranslator;
 import dev.superchirok1.wgtranslator.config.Configuration;
 import dev.superchirok1.wgtranslator.serializer.Text;
 import dev.superchirok1.wgtranslator.serializer.impl.LegacyAmpersandSerializer;
-import lombok.val;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -13,15 +12,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scheduler.BukkitScheduler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Connection;
 import java.util.function.Consumer;
 
 public class UpdateChecker implements Listener {

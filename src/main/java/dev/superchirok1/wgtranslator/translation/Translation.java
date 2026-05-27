@@ -1,11 +1,9 @@
 package dev.superchirok1.wgtranslator.translation;
 
-import dev.superchirok1.wgtranslator.WorldGuardTranslator;
 import dev.superchirok1.wgtranslator.config.Configuration;
 import dev.superchirok1.wgtranslator.serializer.Text;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import lombok.Getter;
-import lombok.experimental.UtilityClass;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
