@@ -1,4 +1,5 @@
 # Traduction par 'git-jamesfrench'.
+
 # Modèle de message de refus.
 # %what% est automatiquement remplacé par le texte traduit de la section "components".
 deny_message: "&#ff5400&l❌ Hey ! &fDésolé, mais vous ne pouvez pas &#ff5400%what% &fici !"
