@@ -13,17 +13,17 @@ components:
 
   # Block break
   "break that block": "casser des blocs"
-  "use dynamite": "casser des blocs avec des explosifs"
+  "use dynamite": "utiliser de la dynamite"
 
   # Block / entity interact
-  "use that": "utiliser ça"
+  "use that": "interagir avec ça"
   "open that": "ouvrir ça"
   "sleep": "dormir"
-  "use anchors": "utiliser une Ancre de Réapparition"
+  "use anchors": "utiliser les Ancres de réapparition"
   "use explosives": "utiliser des explosifs"
 
   # Entity spawn / drop
-  "place things": "placer des objets"
+  "place things": "poser des objets"
   "place vehicles": "placer des véhicules"
   "drop items": "lâcher des objets"
   "drop XP": "lâcher de l'XP"
@@ -36,10 +36,10 @@ components:
 
   # Entity damage / mount
   "change that": "modifier ça"
-  "ride that": "monter ça"
+  "ride that": "monter sur ça"
   "hit that": "attaquer ça"
   "damage that": "endommager ça"
-  "harm that": "faire du mal à ça"
+  "harm that": "blesser ça"
   "PvP": "combattre des joueurs·euses"
 
 messages:
