@@ -1,7 +1,13 @@
 # Pre-made WorldGuard translations.
 # Downloaded from https://github.com/SuperCHIROK1/WorldGuard-Translator/tree/main/translations
-# You can add your own languages. Create a file inside "translations" folder and name it in <language>.yml format.
 # All you need to do is customize the message style to fit your server.
+# You can add your own languages. Create a file inside "translations" folder and name it in <language>.yml format.
+#
+# Check for the latest translations here: https://github.com/SuperCHIROK1/WorldGuard-Translator/tree/main/translations
+# Languages available at the time of the plugin build:
+#: English (en)
+#: Russian (ru)
+#: French (fr) - By @git-jamesfrench
 lang: en
 # Prefix for WorldGuard-Translator plugin messages.
 # Used in local messages, replaced via %prefix%
