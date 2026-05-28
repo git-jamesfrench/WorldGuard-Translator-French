@@ -127,7 +127,8 @@ public class TranslatorCommand implements CommandExecutor, TabCompleter {
     private boolean defaultMessage(CommandSender sender, boolean permission, String command) {
         sender.sendMessage(" ");
         sender.sendMessage(text.colorize("  &3&lWorldGuard-Translator &8• &7v" + plugin.getDescription().getVersion()));
-        sender.sendMessage(text.colorize("  &8• &fAuthors: &b" + String.join(", ", plugin.getDescription().getAuthors())));
+        sender.sendMessage(text.colorize("  &8• &fContributors: &b" + String.join(", ", plugin.getDescription().getAuthors())));
+        sender.sendMessage(text.colorize("  &8• &fTranslators: &b" + String.join(", ", plugin.getTranslators())));
         TextComponent component = new TextComponent(text.colorize("  &8• &fRepository: "));
         TextComponent link = new TextComponent(text.colorize("&b&nGitHub (Click for open)&r"));
         link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/SuperCHIROK1/WorldGuard-Translator"));

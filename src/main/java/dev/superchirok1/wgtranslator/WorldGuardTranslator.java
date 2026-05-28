@@ -8,13 +8,18 @@ import dev.superchirok1.wgtranslator.translation.TranslationManager;
 import dev.superchirok1.wgtranslator.util.Logger;
 import dev.superchirok1.wgtranslator.util.Metrics;
 import dev.superchirok1.wgtranslator.util.UpdateChecker;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.List;
+
+@Getter
 public final class WorldGuardTranslator extends JavaPlugin {
 
     public static boolean isFirstLaunch = false;
+    private final List<String> translators = List.of("git-jamesfrench");
 
     @Override
     public void onEnable() {
