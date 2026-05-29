@@ -5,6 +5,10 @@ WorldGuard-Translator
 
 The easiest, fastest, and best way to translate and customize messages for the <b><a href="https://modrinth.com/plugin/worldguard">WorldGuard</a></b> plugin.
 
+![bStats Servers](https://img.shields.io/bstats/servers/31595?style=for-the-badge)
+![bStats Players](https://img.shields.io/bstats/players/31595?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/SuperCHIROK1/WorldGuard-Translator?style=for-the-badge)
+
 ---
 
 ## Features
