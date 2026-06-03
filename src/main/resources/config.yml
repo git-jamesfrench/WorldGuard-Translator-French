@@ -21,6 +21,12 @@ serializer: LEGACY_AMPERSAND
 # Check for WorldGuard-Translator plugin updates.
 # If an update is available, the plugin will notify administrators in the console and chat.
 check_updates: true
+# Display settings.
+display_mode:
+  # Deny message display mode.
+  #: DEFAULT - Send message via chat
+  #: ACTIONBAR - Send message via actionbar
+  deny_message: DEFAULT
 # Permission settings.
 permissions:
   admin_command: "wgtranslator.admin"
