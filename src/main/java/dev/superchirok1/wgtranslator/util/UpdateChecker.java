@@ -32,8 +32,8 @@ public class UpdateChecker implements Listener {
 
     public UpdateChecker(WorldGuardTranslator plugin) {
         this.plugin = plugin;
-        this.component = new TextComponent(text.colorize(" &8• &fDownload: &b"));
-        TextComponent link = new TextComponent("GitHub Releases");
+        this.component = new TextComponent(text.colorize(" &8• &fDownload: "));
+        TextComponent link = new TextComponent(text.colorize("&b&nGitHub Releases&r"));
         link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/SuperCHIROK1/WorldGuard-Translator/releases"));
         link.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponent[]{new TextComponent(text.colorize("&3» &bhttps://github.com/SuperCHIROK1/WorldGuard-Translator/releases"))}));
         this.component.addExtra(link);
