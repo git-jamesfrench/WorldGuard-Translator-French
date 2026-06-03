@@ -1,7 +1,7 @@
 package dev.superchirok1.wgtranslator.translation;
 
 import dev.superchirok1.wgtranslator.WorldGuardTranslator;
-import dev.superchirok1.wgtranslator.util.StringPatcher;
+import dev.superchirok1.wgtranslator.util.Patcher;
 import dev.superchirok1.wgtranslator.serializer.Text;
 import dev.superchirok1.wgtranslator.util.Logger;
 import lombok.Getter;
@@ -63,7 +63,7 @@ public class TranslationManager {
 
     public void setMemoryDenyMessage(String message) {
         message = Text.get.colorize(message);
-        StringPatcher.setDenyMessage(message);
+        Patcher.denyMessage(message);
     }
 
     public void setDenyMessage(String message) {

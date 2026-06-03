@@ -2,12 +2,9 @@ package dev.superchirok1.wgtranslator;
 
 import dev.superchirok1.wgtranslator.command.TranslatorCommand;
 import dev.superchirok1.wgtranslator.config.Configuration;
-import dev.superchirok1.wgtranslator.util.StringPatcher;
+import dev.superchirok1.wgtranslator.util.*;
 import dev.superchirok1.wgtranslator.serializer.Text;
 import dev.superchirok1.wgtranslator.translation.TranslationManager;
-import dev.superchirok1.wgtranslator.util.Logger;
-import dev.superchirok1.wgtranslator.util.Metrics;
-import dev.superchirok1.wgtranslator.util.UpdateChecker;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -37,8 +34,8 @@ public final class WorldGuardTranslator extends JavaPlugin {
         Configuration.init(this);
         TranslationManager.setPlugin(this);
         TranslationManager.loadTranslations(Configuration.language, (time)->{
-            StringPatcher.patchFlags();
-            StringPatcher.setDenyMessage(TranslationManager.getTranslation().denyMessage);
+            Patcher.patchListenerMethod();
+            Patcher.denyMessage(TranslationManager.getTranslation().denyMessage);
             Bukkit.getScheduler().runTask(this, ()->{
                 TranslatorCommand translatorCommand = new TranslatorCommand(this);
                 PluginCommand command = getCommand("wgt");
@@ -70,7 +67,7 @@ public final class WorldGuardTranslator extends JavaPlugin {
         Configuration.init(this);
 
         TranslationManager.loadTranslations(Configuration.language, (v) -> {
-            StringPatcher.setDenyMessage(TranslationManager.getTranslation().denyMessage);
+            Patcher.denyMessage(TranslationManager.getTranslation().denyMessage);
             long time = System.currentTimeMillis() - start;
             Logger.info("Reload completed in " + time + "ms");
             onComplete.accept(time);
