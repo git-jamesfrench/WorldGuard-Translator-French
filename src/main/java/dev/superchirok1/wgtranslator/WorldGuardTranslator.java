@@ -57,6 +57,10 @@ public final class WorldGuardTranslator extends JavaPlugin {
         metrics.addCustomChart(new Metrics.SimplePie("check_updates", () -> {
             return String.valueOf(Configuration.checkUpdates);
         }));
+
+        metrics.addCustomChart(new Metrics.SimplePie("deny_message_display_mode", () -> {
+            return Configuration.displayDenyMessage.name();
+        }));
     }
 
     public void reload(String name, Consumer<Long> onComplete) {
