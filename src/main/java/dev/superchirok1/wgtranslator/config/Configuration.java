@@ -13,6 +13,8 @@ public class Configuration {
     public String prefix = "&3&l[WG-Translator]&f";
     public boolean checkUpdates = true;
 
+    public DisplayMode displayDenyMessage = DisplayMode.DEFAULT;
+
     public String permissionAdmin = "wgtranslator.admin";
     public String permissionUpdateLog = "wgtranslator.update";
 
@@ -23,8 +25,13 @@ public class Configuration {
         prefix = Text.get.colorize(config.getString("prefix", prefix));
         language = config.getString("lang", language.toLowerCase());
         checkUpdates = config.getBoolean("check_updates", checkUpdates);
+        displayDenyMessage = DisplayMode.valueOf(config.getString("display_mode.deny_message", displayDenyMessage.toString()));
         permissionAdmin = config.getString("permission.admin_command", permissionAdmin);
         permissionUpdateLog = config.getString("permission.update_log", permissionUpdateLog);
+    }
+
+    public enum DisplayMode {
+        DEFAULT, ACTIONBAR
     }
 
 }
