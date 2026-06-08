@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LegacyAmpersandSerializer implements TextSerializer {
-    private static final Pattern HEX_PATTERN = Pattern.compile("&#([a-fA-F\\d]{6})");
+    private static final Pattern HEX_PATTERN = Pattern.compile("(?:&)?#([a-fA-F\\d]{6})");
     public final char COLOR_CHAR = '§';
 
     @Override
