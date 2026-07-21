@@ -36,6 +36,8 @@ public final class WorldGuardTranslator extends JavaPlugin {
         TranslationManager.loadTranslations(Configuration.language, (time)->{
             Patcher.patchListenerMethod();
             Patcher.denyMessage(TranslationManager.getTranslation().denyMessage);
+            Patcher.entryDenyMessage(TranslationManager.getTranslation().entryDenyMessage);
+            Patcher.exitDenyMessage(TranslationManager.getTranslation().exitDenyMessage);
             Bukkit.getScheduler().runTask(this, ()->{
                 TranslatorCommand translatorCommand = new TranslatorCommand(this);
                 PluginCommand command = getCommand("wgt");
