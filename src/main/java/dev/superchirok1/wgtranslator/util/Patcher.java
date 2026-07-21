@@ -4,6 +4,7 @@ import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.bukkit.listener.RegionProtectionListener;
+import com.sk89q.worldguard.protection.flags.Flag;
 import com.sk89q.worldguard.protection.flags.Flags;
 import com.sk89q.worldguard.protection.flags.StringFlag;
 import dev.superchirok1.wgtranslator.config.Configuration;
@@ -28,15 +29,15 @@ public class Patcher {
     }
 
     public void denyMessage(String message) {
-        StringFlag deny = Flags.DENY_MESSAGE;
-        try {
-            Field field = StringFlag.class.getDeclaredField("defaultValue");
-            field.setAccessible(true);
+        processStringFlag(Flags.DENY_MESSAGE, message);
+    }
 
-            field.set(deny, message);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public void entryDenyMessage(String message) {
+        processStringFlag(Flags.ENTRY_DENY_MESSAGE, message);
+    }
+
+    public void exitDenyMessage(String message) {
+        processStringFlag(Flags.EXIT_DENY_MESSAGE, message);
     }
 
     public void patchListenerMethod() {
@@ -65,6 +66,17 @@ public class Patcher {
                 Player player = BukkitAdapter.adapt(localPlayer);
                 player.sendActionBar(message);
             }
+        }
+    }
+
+    private void processStringFlag(StringFlag deny, String message) {
+        try {
+            Field field = StringFlag.class.getDeclaredField("defaultValue");
+            field.setAccessible(true);
+
+            field.set(deny, message);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
