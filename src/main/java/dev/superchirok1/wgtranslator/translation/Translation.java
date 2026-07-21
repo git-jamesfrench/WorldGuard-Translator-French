@@ -16,6 +16,8 @@ public class Translation {
 
     public Translation(YamlConfiguration config, File file) {
         denyMessage = Text.get.colorize(config.getString("deny_message", "&#ff5400&l❌ Hey! &fSorry, but you can`t &#ff5400%what% &fhere!"));
+        entryDenyMessage = Text.get.colorize(config.getString("entry_deny_message", "&#ff5400&l❌ Hey! &fYou are not permitted to enter this area."));
+        exitDenyMessage = Text.get.colorize(config.getString("exit_deny_message", "&#ff5400&l❌ Hey! &fYou are not permitted to leave this area."));
         this.config = config;
         this.file = file;
         components = new Components();
@@ -25,7 +27,7 @@ public class Translation {
 
     public Messages messages;
     public Components components;
-    public String denyMessage;
+    public String denyMessage, entryDenyMessage, exitDenyMessage;
 
     @Getter
     public class Components {

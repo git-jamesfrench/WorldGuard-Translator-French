@@ -1,6 +1,9 @@
 # Deny message template.
 # %what% is automatically replaced with the translated string from the "components" section.
 deny_message: "&#ff5400&l❌ Hey! &fSorry, but you can`t &#ff5400%what% &fhere!"
+# Entry & exit deny message.
+entry_deny_message: "&#ff5400&l❌ Hey! &fYou are not permitted to enter this area."
+exit_deny_message: "&#ff5400&l❌ Hey! &fYou are not permitted to leave this area."
 # Translations of specific actions.
 # Inserted instead of %what% in deny_message.
 # You can add your own translations using /wgt component add <key>;<value>
