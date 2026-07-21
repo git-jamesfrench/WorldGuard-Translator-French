@@ -13,13 +13,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TranslatorCommand implements CommandExecutor, TabCompleter {
 
@@ -149,16 +147,19 @@ public class TranslatorCommand implements CommandExecutor, TabCompleter {
             return Collections.emptyList();
         }
         if (args.length == 1) {
-            return TAB_1;
+            return tabFilter(TAB_1, args[0]);
         }
         if (args.length == 2) {
-            if (args[0].equalsIgnoreCase("component")) {
-                return TAB_COMPONENT;
-            }
-            if (args[0].equalsIgnoreCase("denymessage")) {
-                return TAB_DM;
-            }
+            return switch (args[0].toLowerCase(Locale.ROOT)) {
+                case "component" -> tabFilter(TAB_COMPONENT, args[1]);
+                case "denymessage" -> tabFilter(TAB_DM, args[1]);
+                default -> Collections.emptyList();
+            };
         }
         return Collections.emptyList();
+    }
+
+    private List<String> tabFilter(List<String> list, String arg) {
+        return StringUtil.copyPartialMatches(arg, list, new ArrayList<>());
     }
 }
